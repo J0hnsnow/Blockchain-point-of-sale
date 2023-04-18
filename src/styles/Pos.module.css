@@ -1,0 +1,111 @@
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.16) 30px 30px 30px;
+    background-color: #ffff;
+    border-radius: 4%;
+    width: 300px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin-top: 10px;
+    background-color: #ffff;
+}
+
+.buttons button {
+    /* add class selector to button selector */
+    background-color: rgb(10, 56, 166);
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.buttons button:active {
+    background-color: #999;
+}
+
+.amountInput {
+    width: 100%;
+    margin: 7px 0px;
+}
+
+.addressInput {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.qrCode {
+    text-align: center;
+    margin: 2px;
+}
+
+.header {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    margin: 5px;
+}
+
+.href {
+    color: rgb(10, 56, 166);
+    text-decoration: underline;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.waitingConfirmation {
+    box-sizing: border-box;
+    color: #ffff;
+    background-color: red;
+    text-align: center;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+.approvedConfirmation {
+    box-sizing: border-box;
+    color: #ffff;
+    background: green;
+    text-align: center;
+    padding: 7px;
+    margin-top: 10px;
+}
+
+.adaValue {
+    color: #000;
+}
+
+.popup {
+    margin: auto;
+    text-align: center;
+}
+
+.qrButton {
+    width: 100%;
+    background: rgb(10, 56, 166);
+    color: #ffff !important;
+}
+
+.dissabledQrButton {
+    width: 100%;
+    background: rgb(10, 56, 166);
+    color: #ffff !important;
+    opacity: 0.7;
+}
