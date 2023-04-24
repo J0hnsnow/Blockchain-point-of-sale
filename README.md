@@ -1,5 +1,5 @@
 ## Important
-It's important to note that this repository is just an example, and in order to use it as a starting point, you will need to clone it to your local machine. Once you have cloned the repository, you can begin customizing and building upon it to create your own unique application.
+It's important to note that this repository is just an example, and in order to use it as a starting point, you will need to fork it. Once you have forked the repository, you can begin customizing and building upon it to create your own unique application.
 
 ## Getting Started
 
