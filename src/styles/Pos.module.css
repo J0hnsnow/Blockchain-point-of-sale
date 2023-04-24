@@ -1,4 +1,4 @@
-.center {
+.index {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -12,6 +12,13 @@
     width: 300px;
 }
 
+.logo {
+    margin: auto;
+    display: block;
+    text-align: center;
+    padding-bottom: 10;
+}
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -22,7 +29,7 @@
 
 .buttons button {
     /* add class selector to button selector */
-    background-color: rgb(10, 56, 166);
+    background-color: #0a38a6;
     border: none;
     border-radius: 5px;
     font-size: 24px;
@@ -63,7 +70,7 @@
 }
 
 .href {
-    color: rgb(10, 56, 166);
+    color: #0a38a6;
     text-decoration: underline;
     text-align: center;
     margin: auto;
@@ -73,7 +80,7 @@
 .waitingConfirmation {
     box-sizing: border-box;
     color: #ffff;
-    background-color: red;
+    background-color: #ff7676;
     text-align: center;
     padding: 7px;
     margin-top: 10px;
@@ -82,7 +89,7 @@
 .approvedConfirmation {
     box-sizing: border-box;
     color: #ffff;
-    background: green;
+    background: #76ff76;
     text-align: center;
     padding: 7px;
     margin-top: 10px;
@@ -99,13 +106,46 @@
 
 .qrButton {
     width: 100%;
-    background: rgb(10, 56, 166);
+    background: #0a38a6;
     color: #ffff !important;
+}
+
+.qrButton:hover {
+    width: 100%;
+    background: #0a38a6;
+    color: #999 !important;
 }
 
 .dissabledQrButton {
     width: 100%;
-    background: rgb(10, 56, 166);
+    background: #0a38a6;
     color: #ffff !important;
     opacity: 0.7;
+}
+
+.dialogueHeader {
+    margin: auto;
+    font-weight: 600;
+    color: #0a38a6;
+}
+
+.marginAuto {
+    margin: auto;
+}
+
+.completeButton {
+    width: 100%;
+    background: #0a38a6;
+    color: #ffff !important;
+}
+
+.completeButton:hover {
+    width: 100%;
+    background: #0a38a6;
+    color: #999 !important;
+}
+
+.addressHref {
+    margin: auto;
+    padding: 0 20px;
 }

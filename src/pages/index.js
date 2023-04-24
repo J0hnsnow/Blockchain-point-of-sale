@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import Popup from "../components/popup.js";
 import styles from "@/styles/Pos.module.css";
 import TextField from "@mui/material/TextField";
-import Image from "next/image";
 
 export default function pos() {
   const [uri, setUri] = useState("");
@@ -10,63 +10,41 @@ export default function pos() {
   const [address, setAddress] = useState("");
   const [adaValue, setAdaValue] = useState("");
 
+  // Insert new number into number input
   const insertNumber = (num) => {
     setAmount((prevNumber) => prevNumber * 10 + num);
   };
 
+  // Remove last number from number input
   const removeLastDigit = () => {
     setAmount((prevNumber) => Math.floor(prevNumber / 10));
   };
 
+  // Generate URI for QR code
   const generateURI = () => {
     setUri(`cardano:${address}?amount=${amount}`);
   };
 
+  // Clear inputs when closing popup
   const clearFields = () => {
     setAmount("");
     setAddress("");
   };
 
-  const fetchAdaPrice = async () => {
-    fetch("/api/coinmarketcap")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setAdaValue(data.value))
-      .catch((error) => console.error("Error:", error));
-  };
-
-  useEffect(() => {
-    const fetchPrice = async () => {
-      await fetchAdaPrice();
-    };
-    fetchPrice();
-  }, []);
-
   return (
-    <div className={styles.center}>
+    <div className={styles.index}>
       <div>
-        <div
-          style={{
-            margin: "auto",
-            display: "block",
-            textAlign: "center",
-            paddingBottom: 10,
-          }}
-        >
+        <div className={styles.logo}>
           <Image src="/cardano-logo.png" alt="Logo" width={42} height={40} />
         </div>
         <div className={styles.header}>ADA PAYMENT</div>
         <TextField
+          type="number"
+          variant="outlined"
           id="outlined-basic"
           label="Insert Amount"
-          variant="outlined"
-          className={styles.amountInput}
-          type="number"
           value={amount}
+          className={styles.amountInput}
           onChange={(e) => setAmount(Number(e.target.value))}
         />
         {amount >= 1 ? (
@@ -88,22 +66,22 @@ export default function pos() {
         </div>
       </div>
       <TextField
+        type="text"
+        variant="outlined"
         id="outlined-basic"
         label="Insert Address"
-        variant="outlined"
-        className={styles.addressInput}
-        type="text"
         value={address}
+        className={styles.addressInput}
         onChange={(e) => setAddress(e.target.value)}
       />
       <Popup
-        className={styles.popup}
-        adaValue={adaValue}
         uri={uri}
+        amount={amount}
+        address={address}
+        adaValue={adaValue}
+        className={styles.popup}
         generateURI={generateURI}
         clearFields={clearFields}
-        address={address}
-        amount={amount}
       />
     </div>
   );
