@@ -1,6 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Important
+It's important to note that this repository is just an example, and in order to use it as a starting point, you will need to fork it. Once you have forked the repository, you can begin customizing and building upon it to create your own unique application.
 
 ## Getting Started
+
+This is a  starting point repository for developers who want to learn how to use a Point of Sale application on Cardano, utilizing the Blockfrost API. To achieve the final result of building a functional Point of Sale application on Cardano, follow the official guide provided on the [Developer Portal](https://developers.cardano.org/docs/integrate-cardano/point-of-sale). This guide provides a step-by-step process for integrating Cardano into your Point of Sale application, including the use of the Blockfrost API. Following the guide will help ensure that your application is built correctly and is fully functional.
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## NextJS
 
 First, run the development server:
 
