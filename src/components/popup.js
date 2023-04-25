@@ -15,9 +15,9 @@ export default function AlertDialog({
   generateURI,
   uri,
   address,
-  amount,
+  amountInAda,
+  amountInDollars,
   clearFields,
-  adaValue,
 }) {
   const [open, setOpen] = useState(false);
   const [balance, setBalance] = useState("");
@@ -45,11 +45,11 @@ export default function AlertDialog({
   return (
     <div className={styles.popup}>
       <Button
-        disabled={address && amount ? false : true}
+        disabled={address && amountInAda ? false : true}
         variant="outlined"
         onClick={handleClickOpen}
         className={
-          address && amount ? styles.qrButton : styles.dissabledQrButton
+          address && amountInAda ? styles.qrButton : styles.dissabledQrButton
         }
       >
         Generate QR code
@@ -59,13 +59,13 @@ export default function AlertDialog({
           Order total:
         </DialogContentText>
         <DialogContentText className={styles.marginAuto}>
-          {`${amount} ₳ = ${(amount * adaValue).toFixed(2)} $`}
+          {`${amountInAda} ₳ = ${amountInDollars}$`}
         </DialogContentText>
         <DialogContentText className={styles.dialogueHeader}>
           Send:
         </DialogContentText>
         <DialogContentText className={styles.marginAuto}>
-          {`${amount} ₳`}
+          {`${amountInAda} ₳`}
         </DialogContentText>
         <DialogContentText className={styles.dialogueHeader}>
           To Address:
@@ -83,7 +83,7 @@ export default function AlertDialog({
           <div className={styles.qrCode}>
             <QRCode value={uri} />
           </div>
-          {newBalance - balance >= amount ? (
+          {newBalance - balance >= amountInAda ? (
             <DialogContentText className={styles.approvedConfirmation}>
               Payment received successfully
             </DialogContentText>

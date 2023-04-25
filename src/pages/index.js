@@ -49,11 +49,11 @@ export default function pos() {
         />
         {amount >= 1 ? (
           <div className={styles.adaValue}>
-            {amount} ₳ = {(adaValue * amount).toFixed(2)} $
+            {amount} $ = {(amount / adaValue).toFixed(2)} ₳
           </div>
         ) : (
           <div className={styles.adaValue}>
-            1 ₳ = {parseFloat(adaValue).toFixed(2)} $
+            1 $ = {parseFloat(1 / adaValue).toFixed(2)} ₳
           </div>
         )}
         <div className={styles.buttons}>
@@ -76,7 +76,8 @@ export default function pos() {
       />
       <Popup
         uri={uri}
-        amount={amount}
+        amountInAda={(amount / adaValue).toFixed(2)}
+        amountInDollars={amount}
         address={address}
         adaValue={adaValue}
         className={styles.popup}
