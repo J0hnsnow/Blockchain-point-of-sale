@@ -22,7 +22,7 @@ export default function pos() {
 
   // Generate URI for QR code
   const generateURI = () => {
-    setUri(`cardano:${address}?amount=${amount}`);
+    setUri(`cardano:${address}?amount=${(amount / adaValue).toFixed(2)}`);
   };
 
   // Clear inputs when closing popup
